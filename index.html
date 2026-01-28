@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The PACK Landscaping and Lawn Care | Spartanburg, SC</title>
+    <meta name="description" content="Professional landscaping and lawn care services in Spartanburg, SC. The PACK delivers rugged reliability and expert craftsmanship for your outdoor spaces.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #C45B28;
+            --terracotta-dark: #A34820;
+            --forest: #2D5016;
+            --forest-light: #3D6B1E;
+            --cream: #F5F1EB;
+            --charcoal: #2C2C2C;
+            --sand: #D4C4A8;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background-color: var(--cream);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--charcoal);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--cream);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu .material-icons {
+            color: var(--cream);
+            font-size: 2rem;
+        }
+
+        /* Hero Section - Asymmetric Layout */
+        .hero {
+            min-height: 75vh;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal) 55%, var(--forest) 55%, var(--forest) 100%);
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C45B28' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            color: var(--cream);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            color: var(--terracotta);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 450px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--terracotta);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-frame {
+            background: var(--terracotta);
+            padding: 1rem;
+            clip-path: polygon(5% 0, 100% 0, 100% 95%, 95% 100%, 0 100%, 0 5%);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--cream);
+        }
+
+        .hero-image .material-icons {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image p {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid var(--cream);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--charcoal);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 span {
+            color: var(--terracotta);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--terracotta);
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            border-left-color: var(--terracotta);
+            transform: translateX(10px);
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--forest);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+
+        .service-icon .material-icons {
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--charcoal);
+            color: var(--cream);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content h2 span {
+            color: var(--terracotta);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .about-features .material-icons {
+            color: var(--terracotta);
+        }
+
+        .about-image {
+            background: var(--forest);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid var(--terracotta);
+            z-index: 0;
+        }
+
+        .about-image .material-icons {
+            font-size: 5rem;
+            color: var(--cream);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image p {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--cream);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover .why-icon {
+            transform: scale(1.1);
+        }
+
+        .why-icon .material-icons {
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .why-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Business Hours */
+        .hours {
+            background: var(--forest);
+            color: var(--cream);
+        }
+
+        .hours-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hours-text h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .hours-text p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hours-table {
+            background: rgba(0,0,0,0.2);
+            padding: 2rem;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-row .day {
+            font-weight: 600;
+        }
+
+        .hours-row .time {
+            color: var(--sand);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .contact-card:hover {
+            border-bottom-color: var(--terracotta);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--terracotta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .contact-icon .material-icons {
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: #666;
+        }
+
+        .contact-card a {
+            color: var(--terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--terracotta-dark);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-cta {
+            background: var(--white);
+            color: var(--terracotta);
+        }
+
+        .btn-cta:hover {
+            background: var(--cream);
+        }
+
+        .btn-facebook {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-facebook:hover {
+            background: var(--white);
+            color: var(--terracotta);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--terracotta);
+            letter-spacing: 3px;
+        }
+
+        .footer-logo span {
+            color: var(--cream);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hours-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                background: linear-gradient(180deg, var(--charcoal) 0%, var(--forest) 100%);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content h2, .hours-text h2 {
+                font-size: 2rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">THE <span>PACK</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Spartanburg, SC</span>
+                <h1>Landscaping <span>&</span> Lawn Care Done <span>Right</span></h1>
+                <p>Bold outdoor spaces deserve rugged reliability. The PACK delivers expert landscaping, lawn maintenance, and hardscaping services built to last through every season.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="tel:8645047174" class="btn btn-primary">
+                        <span class="material-icons">phone</span>
+                        Call Now
+                    </a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Star Reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-frame">
+                    <div class="hero-image">
+                        <span class="material-icons">grass</span>
+                        <p>Your Outdoor Experts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">grass</span>
+                    </div>
+                    <h3>Lawn Maintenance</h3>
+                    <p>Regular mowing, edging, and trimming to keep your lawn looking pristine year-round. We handle the hard work so you can enjoy your outdoor space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">park</span>
+                    </div>
+                    <h3>Landscape Design</h3>
+                    <p>Custom landscape designs that transform your property. From garden beds to complete outdoor living spaces, we bring your vision to life.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">eco</span>
+                    </div>
+                    <h3>Planting & Gardens</h3>
+                    <p>Expert plant selection and installation for flower beds, shrubs, and trees. We choose the right plants for your soil and sun conditions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">foundation</span>
+                    </div>
+                    <h3>Hardscaping</h3>
+                    <p>Patios, walkways, retaining walls, and more. Quality hardscaping that adds structure and functionality to your outdoor space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">water_drop</span>
+                    </div>
+                    <h3>Irrigation Systems</h3>
+                    <p>Professional sprinkler installation and repair. Keep your lawn healthy with efficient, automated watering systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">cleaning_services</span>
+                    </div>
+                    <h3>Seasonal Cleanup</h3>
+                    <p>Fall leaf removal, spring cleanup, and storm debris clearing. We prepare your property for every season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>The <span>PACK</span> Difference</h2>
+                    <p>We are more than just a lawn care company. The PACK is a team of dedicated outdoor professionals committed to transforming your property into the outdoor space you have always wanted.</p>
+                    <p>Based in Spartanburg, SC, we bring rugged reliability and attention to detail to every project, big or small. From regular maintenance to complete landscape transformations, we have got you covered.</p>
+                    <ul class="about-features">
+                        <li>
+                            <span class="material-icons">check_circle</span>
+                            Locally Owned & Operated
+                        </li>
+                        <li>
+                            <span class="material-icons">check_circle</span>
+                            Licensed & Fully Insured
+                        </li>
+                        <li>
+                            <span class="material-icons">check_circle</span>
+                            Free Estimates
+                        </li>
+                        <li>
+                            <span class="material-icons">check_circle</span>
+                            Satisfaction Guaranteed
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <span class="material-icons">landscape</span>
+                    <p>Est. in Spartanburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why Choose <span>Us</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <span class="material-icons">thumb_up</span>
+                    </div>
+                    <h3>Quality Work</h3>
+                    <p>We take pride in every job, delivering results that exceed expectations.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <span class="material-icons">schedule</span>
+                    </div>
+                    <h3>Reliable Service</h3>
+                    <p>On time, every time. You can count on us to show up and get the job done.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <span class="material-icons">attach_money</span>
+                    </div>
+                    <h3>Fair Pricing</h3>
+                    <p>Competitive rates with no hidden fees. Quality service at honest prices.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <span class="material-icons">groups</span>
+                    </div>
+                    <h3>Local Experts</h3>
+                    <p>We know Spartanburg. Our team understands local soil, climate, and plants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="hours" id="hours">
+        <div class="section-container">
+            <div class="hours-content">
+                <div class="hours-text">
+                    <h2>Business Hours</h2>
+                    <p>We are available to serve you throughout the week. Give us a call to schedule your free estimate or discuss your landscaping needs.</p>
+                    <a href="tel:8645047174" class="btn btn-primary">
+                        <span class="material-icons">phone</span>
+                        (864) 504-7174
+                    </a>
+                </div>
+                <div class="hours-table">
+                    <div class="hours-row">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">7:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="day">Saturday</span>
+                        <span class="time">8:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="day">Sunday</span>
+                        <span class="time">Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Get In <span>Touch</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span class="material-icons">phone</span>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:8645047174">(864) 504-7174</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span class="material-icons">email</span>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:info@thepacklandscaping.com">info@thepacklandscaping.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span class="material-icons">location_on</span>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Spartanburg, SC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="section-container">
+            <h2>Ready to Transform Your Yard?</h2>
+            <p>Contact The PACK today for a free estimate on your landscaping project.</p>
+            <div class="cta-buttons">
+                <a href="tel:8645047174" class="btn btn-cta">
+                    <span class="material-icons">phone</span>
+                    Call (864) 504-7174
+                </a>
+                <a href="https://www.facebook.com/ThePACKLandscapingandLawnCare/" target="_blank" class="btn btn-facebook">
+                    <span class="material-icons">facebook</span>
+                    Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-logo">THE <span>PACK</span></div>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#hours">Hours</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>2025 The PACK Landscaping and Lawn Care. All rights reserved. | Spartanburg, SC</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

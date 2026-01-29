@@ -75,6 +75,7 @@
         .logo img {
             height: 70px;
             width: auto;
+            transition: height 0.3s ease;
         }
 
         .nav-links {
@@ -95,6 +96,14 @@
 
         .nav-links a:hover {
             color: var(--accent);
+        }
+
+        .nav-scrolled {
+            padding: 0.5rem 0;
+        }
+
+        .nav-scrolled .logo img {
+            height: 45px;
         }
 
         .mobile-menu {
@@ -1305,6 +1314,11 @@
             padding: { top: 20, bottom: 20, left: 20, right: 20 }
         });
         lightbox.init();
+    </script>
+<script>
+    window.addEventListener('scroll', () => {
+        document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
     </script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="697ae76ddad8af6b147dfab5" ></script>
 </body>

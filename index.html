@@ -98,6 +98,10 @@
             color: var(--accent);
         }
 
+        .mobile-cta {
+            display: none;
+        }
+
         .nav-scrolled {
             padding: 0.5rem 0;
         }
@@ -860,6 +864,30 @@
                 border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
+            .mobile-cta {
+                display: block;
+                margin-top: 0.5rem;
+            }
+
+            .mobile-cta a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: var(--accent);
+                color: var(--white) !important;
+                padding: 0.75rem 1.5rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+                border: none;
+                border-bottom: none !important;
+            }
+
+            .mobile-cta a .material-icons {
+                font-size: 1.2rem;
+            }
+
             .mobile-menu {
                 display: block;
             }
@@ -918,6 +946,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#hours">Hours</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="mobile-cta"><a href="tel:8645047174"><span class="material-icons">phone</span> (864) 504-7174</a></li>
             </ul>
             <button class="mobile-menu">
                 <span class="material-icons">menu</span>

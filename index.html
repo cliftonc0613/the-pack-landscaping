@@ -365,6 +365,19 @@
             background: var(--primary);
             color: var(--light-bg);
             position: relative;
+            overflow: hidden;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/538595719_1322255903235314_2467114852253244184_n.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
         }
 
         .about-grid {
@@ -372,6 +385,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .about-content h2 {

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
     <style>
         :root {
             --primary: #222222;
@@ -690,6 +691,72 @@
             opacity: 0.7;
         }
 
+        /* Gallery Section */
+        .gallery {
+            background: var(--primary);
+            color: var(--light-bg);
+        }
+
+        .gallery .section-header h2 {
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-grid a {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--primary-light);
+        }
+
+        .gallery-grid a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .gallery-grid a::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .gallery-grid a:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-grid a:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-grid a .gallery-zoom {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            color: var(--white);
+            font-size: 1.8rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .gallery-grid a:hover .gallery-zoom {
+            opacity: 1;
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero-container {
@@ -736,6 +803,10 @@
             .contact-cards {
                 grid-template-columns: 1fr;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -772,6 +843,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.5rem;
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -793,6 +869,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#hours">Hours</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -971,6 +1048,138 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our <span>Work</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="pswp-gallery gallery-grid" id="pack-gallery">
+                <a href="images/490303194_1205986924862213_943021338618234306_n.jpg" data-pswp-width="2048" data-pswp-height="1278" target="_blank">
+                    <img src="images/490303194_1205986924862213_943021338618234306_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490356360_1208744621253110_903839308441862756_n.jpg" data-pswp-width="1536" data-pswp-height="2048" target="_blank">
+                    <img src="images/490356360_1208744621253110_903839308441862756_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490378076_1208744561253116_8820691033535038332_n.jpg" data-pswp-width="1536" data-pswp-height="2048" target="_blank">
+                    <img src="images/490378076_1208744561253116_8820691033535038332_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490444420_1208882767905962_1604698283512719656_n.jpg" data-pswp-width="960" data-pswp-height="720" target="_blank">
+                    <img src="images/490444420_1208882767905962_1604698283512719656_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490452993_1208882874572618_2131877217954617069_n.jpg" data-pswp-width="960" data-pswp-height="720" target="_blank">
+                    <img src="images/490452993_1208882874572618_2131877217954617069_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490485315_1208882847905954_4954026955583166426_n.jpg" data-pswp-width="960" data-pswp-height="641" target="_blank">
+                    <img src="images/490485315_1208882847905954_4954026955583166426_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/490810681_1208744657919773_6189184569480864364_n.jpg" data-pswp-width="1536" data-pswp-height="2048" target="_blank">
+                    <img src="images/490810681_1208744657919773_6189184569480864364_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/491914915_1217785353682370_133018854792011398_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/491914915_1217785353682370_133018854792011398_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/492000950_1217574097036829_1681150044631133658_n.jpg" data-pswp-width="746" data-pswp-height="958" target="_blank">
+                    <img src="images/492000950_1217574097036829_1681150044631133658_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/492252922_1217785640349008_5080056022886259500_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/492252922_1217785640349008_5080056022886259500_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/492727119_1218028330324739_357671812220251300_n.jpg" data-pswp-width="960" data-pswp-height="720" target="_blank">
+                    <img src="images/492727119_1218028330324739_357671812220251300_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/514062665_1272743174853254_6879534089276654226_n.jpg" data-pswp-width="1536" data-pswp-height="2048" target="_blank">
+                    <img src="images/514062665_1272743174853254_6879534089276654226_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/538254561_1323014323159472_2235304728393324783_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/538254561_1323014323159472_2235304728393324783_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/538595719_1322255903235314_2467114852253244184_n.jpg" data-pswp-width="2048" data-pswp-height="1425" target="_blank">
+                    <img src="images/538595719_1322255903235314_2467114852253244184_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/538867166_1323014409826130_8962883181879403051_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/538867166_1323014409826130_8962883181879403051_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/539248758_1323014279826143_3715326612252243856_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/539248758_1323014279826143_3715326612252243856_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/539414448_1323014363159468_5288908910793928546_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/539414448_1323014363159468_5288908910793928546_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/540619682_1326907299436841_3016009263548928085_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/540619682_1326907299436841_3016009263548928085_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/540846859_1327147729412798_2346769279157917362_n.jpg" data-pswp-width="720" data-pswp-height="960" target="_blank">
+                    <img src="images/540846859_1327147729412798_2346769279157917362_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/561338363_1371595394968031_7638284695066047542_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/561338363_1371595394968031_7638284695066047542_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/562199526_1371595651634672_4716036529871643797_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/562199526_1371595651634672_4716036529871643797_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/563612395_1371595204968050_4760767719391965761_n.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank">
+                    <img src="images/563612395_1371595204968050_4760767719391965761_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/563999174_1371595468301357_6375207060682862324_n.jpg" data-pswp-width="1536" data-pswp-height="2048" target="_blank">
+                    <img src="images/563999174_1371595468301357_6375207060682862324_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/564001669_1371595524968018_5246010324490660602_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/564001669_1371595524968018_5246010324490660602_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/564609500_1371595311634706_2512647385211343602_n.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank">
+                    <img src="images/564609500_1371595311634706_2512647385211343602_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/564664747_1371595694968001_6265178263304336225_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/564664747_1371595694968001_6265178263304336225_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/565127684_1371595604968010_417934115696630642_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/565127684_1371595604968010_417934115696630642_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/565127696_1371595561634681_984917778554731243_n.jpg" data-pswp-width="2048" data-pswp-height="1536" target="_blank">
+                    <img src="images/565127696_1371595561634681_984917778554731243_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/565168874_1371595724967998_4457519821317401869_n.jpg" data-pswp-width="1152" data-pswp-height="2048" target="_blank">
+                    <img src="images/565168874_1371595724967998_4457519821317401869_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+                <a href="images/566228022_1371595264968044_7882823910377664611_n.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank">
+                    <img src="images/566228022_1371595264968044_7882823910377664611_n.jpg" alt="Landscaping project by The PACK" loading="lazy">
+                    <span class="material-icons gallery-zoom">zoom_in</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Business Hours -->
     <section class="hours" id="hours">
         <div class="section-container">
@@ -1060,6 +1269,7 @@
                 <ul class="footer-links">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#hours">Hours</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1069,5 +1279,17 @@
             </div>
         </div>
     </footer>
+    <!-- PhotoSwipe -->
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe-lightbox.esm.min.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#pack-gallery',
+            children: 'a',
+            pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.esm.min.js'),
+            bgOpacity: 0.92,
+            padding: { top: 20, bottom: 20, left: 20, right: 20 }
+        });
+        lightbox.init();
+    </script>
 </body>
 </html>
